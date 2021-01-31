@@ -1,7 +1,8 @@
 <template>
   <div class="app">
-    wqeqweq
+    <div class="app__container">
       <router-view/>
+    </div>
   </div>
 </template>
 
@@ -14,11 +15,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "assets/scss/reset.scss";
-@import "assets/scss/variables.scss";
-@import "assets/scss/inputs.scss";
-@import "assets/scss/buttons.scss";
-@import "assets/scss/core.scss";
 
 @font-face {
   font-family: 'Ubuntu';

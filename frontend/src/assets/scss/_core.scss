@@ -1,8 +1,20 @@
 body {
   font: $font-size-base $font-global;
   line-height: 1.2;
-  background: $color-white;
+  background: $bodyBgColor;
   color: $color-black;
+}
+
+.app {
+
+  &__container {
+    width: 90%;
+    max-width: 960px;
+    margin: 80px auto;
+    border-radius: 20px;
+    box-shadow: 2px 4px 6px rgba($color-black, .1);
+    background: $color-white;
+  }
 }
 
 
