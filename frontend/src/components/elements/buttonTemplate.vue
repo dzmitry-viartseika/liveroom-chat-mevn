@@ -1,10 +1,13 @@
 <template>
   <button class="app-button">
-    {{ buttonSetting }}
+ {{ settingsBtn.buttonText }}
+    {{ wer }}
   </button>
 </template>
 
 <script>
+// import { computed } from 'vue';
+
 export default {
   name: 'buttonTemplate',
   props: {
@@ -13,9 +16,19 @@ export default {
       required: true,
       default: () => {},
     },
+    wer: {
+      type: String,
+    },
   },
-  setup() {
-    console.log('buttonSettings', buttonSettings);
+  setup(props) {
+    console.log('props', props);
+    const settingsBtn = {
+      ...props.buttonSettings,
+    };
+
+    return {
+      settingsBtn,
+    };
   },
 };
 </script>

@@ -10,25 +10,27 @@
     <div class="app-form__field">
       <input type="password" v-model="formData.password">
     </div>
-<!--    <buttonTemplate :buttonSetting="buttonSettings"/>-->
+    <buttonTemplate :buttonSetting="buttonSettings" :wer="wer"/>
   </div>
 </template>
 
 <script>
-// import buttonTemplate from '@/components/elements/buttonTemplate.vue';
-import { computed, reactive } from 'vue';
+import buttonTemplate from '@/components/elements/buttonTemplate.vue';
+import { reactive, ref } from 'vue';
 
 export default {
   name: 'singUpForm',
   components: {
-    // buttonTemplate,
+    buttonTemplate,
   },
   setup() {
-    const buttonSettings = computed(() => ({
-      buttonText: 'wertey',
+    const buttonSettings = reactive({
+      buttonText: 'test',
       handleEvent: '132',
       customClass: '',
-    }));
+    });
+
+    const wer = ref('wer');
 
     const formData = reactive({
       name: '',
@@ -39,6 +41,7 @@ export default {
     return {
       buttonSettings,
       formData,
+      wer,
     };
   },
 };
