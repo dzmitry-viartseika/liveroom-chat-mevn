@@ -10,7 +10,11 @@
     <div class="app-form__field">
       <input type="password" v-model="formData.password">
     </div>
-    <buttonTemplate :buttonSetting="buttonSettings" :wer="wer"/>
+    <buttonTemplate :testtt="testtt" :wer="wer" @changeText="changeText">
+      <template #button>
+        default text
+      </template>
+    </buttonTemplate>
   </div>
 </template>
 
@@ -24,13 +28,17 @@ export default {
     buttonTemplate,
   },
   setup() {
-    const buttonSettings = reactive({
+    const testtt = reactive({
       buttonText: 'test',
       handleEvent: '132',
       customClass: '',
     });
 
     const wer = ref('wer');
+
+    const changeText = () => {
+      wer.value = 'wertey';
+    };
 
     const formData = reactive({
       name: '',
@@ -39,9 +47,10 @@ export default {
     });
 
     return {
-      buttonSettings,
+      testtt,
       formData,
       wer,
+      changeText,
     };
   },
 };

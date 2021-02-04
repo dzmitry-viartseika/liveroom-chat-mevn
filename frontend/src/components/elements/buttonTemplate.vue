@@ -1,33 +1,26 @@
 <template>
-  <button class="app-button">
- {{ settingsBtn.buttonText }}
-    {{ wer }}
+  <button class="app-button" @click="change">
+    {{ testtt.buttonText }}
   </button>
 </template>
 
 <script>
-// import { computed } from 'vue';
+// import { computed, ref } from 'vue';
 
 export default {
   name: 'buttonTemplate',
   props: {
-    buttonSettings: {
+    testtt: {
       type: Object,
-      required: true,
       default: () => {},
     },
-    wer: {
-      type: String,
-    },
   },
-  setup(props) {
-    console.log('props', props);
-    const settingsBtn = {
-      ...props.buttonSettings,
+  setup(props, { emit }) {
+    const change = () => {
+      emit('changeText');
     };
-
     return {
-      settingsBtn,
+      change,
     };
   },
 };
